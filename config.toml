@@ -1,3 +1,106 @@
-baseURL = "http://example.org/"
+baseurl = "/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+theme = "hello-friend-ng"
+
+pygmentsCodefences = true
+pygmentsUseClasses = true
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+# googleAnalytics = ""
+# disqusShortname = ""
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpored = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[author]
+  name = "Melvin Cornelissen"
+
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Metadata mostly used in document's head
+  description = "Homepage and blog by Melvin Cornelissen"
+  keywords = "homepage, blog, science, informatics, development, programming"
+  images = [""]
+
+  # Directory name of your blog content (default is `content/posts`)
+  contentTypeName = "posts"
+  # Default theme "light" or "dark"
+  defaultTheme = "dark"
+
+  # Social icons
+  [[params.social]]
+    name = "email"
+    url  = "mailto:melvin@melvincornelissen.nl"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/coolbluemelvin"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/melvincornelissen"
+
+  [[params.social]]
+    name = "keybase"
+    url  = "https://keybase.io/cornelissen"
+
+  [[params.social]]
+    name = "instagram"
+    url  = "https://www.instagram.com/melvincornelissen/"
+
+[languages]
+  [languages.en]
+    title = "Hi! I'm Melvin"
+    homeSubtitle = "DevOP @ Coolblue."
+    keywords = ""
+    copyright = ""
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "cd ~/"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+	# You can create a language based menu
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts"
+
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        name       = "Tags"
+        url        = "tags/"
