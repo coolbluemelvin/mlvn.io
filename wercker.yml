@@ -23,5 +23,5 @@ deploy:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN_PRIVATE
-        domain: mlvn.io
+        domain: coolbluemelvin.github.io
         basedir: public
