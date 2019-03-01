@@ -1,3 +1,4 @@
+box: debian
 build:
     # Steps make up the actions in your pipeline
     # Read more about steps on our dev center:
