@@ -22,6 +22,6 @@ deploy:
     - install-packages:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
-        token: $GIT_TOKEN
+        token: $GIT_TOKEN_PRIVATE
         domain: mlvn.io
         basedir: public
