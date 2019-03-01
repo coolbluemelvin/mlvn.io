@@ -1,5 +1,5 @@
 ---
-title: "Jamf to Splunk"
+title: "Jamf meets Splunk"
 date: 2019-03-01T14:32:10+01:00
 toc: false
 images:
