@@ -17,6 +17,7 @@ Since we would like to have insights in our enrollments we were looking for a so
 The script that's performing the API call is the following.
 
 ```powershell
+#gather all enrolled computers
 function Jamf_API_call {
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Accept", 'application/json;version=24')
@@ -28,6 +29,7 @@ $data = get-content jamf.json | convertfrom-json
 $script:macOS_jamf = $data.computers.id
 }
 
+#grep General, Hardware, Location and extensionattributes data per computer and add to the log
 function Jamf_DATA {
 Foreach ($id in $macOS_jamf)
 {
