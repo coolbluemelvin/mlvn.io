@@ -13,4 +13,4 @@ tags:
 
 Since we're supporting lots of developers at Coolblue which like to work on a Mac but need to develop for Windows we're enabling them with auto provisioned VM's.
 
-{{< image src="/images/poes.gif" alt="Hello Friend" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/poes.gif" alt="Hello Friend" position="center" style="border-radius: 8px;" >}}
