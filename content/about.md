@@ -10,3 +10,6 @@ aliases = ["about-us","contact"]
 Please use the following PGP fingerprint to email me at melvin@melvincornelissen.nl.
 
     C1DA 959E F6FB D95F A1B0  661F D829 0103 81CC F326
+
+
+{{< figure src="/images/poes.gif" alt="Hello Friend" position="center" style="border-radius: 8px;" >}}
