@@ -1,4 +1,10 @@
 box: debian
+build:
+  steps:
+    - jackrab/hugo-build:
+        version: "0.54"
+        theme: hello-friend-ng
+        flags: --buildDrafts=true
 deploy:
   steps:
     - install-packages:
