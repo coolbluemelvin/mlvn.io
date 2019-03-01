@@ -19,11 +19,6 @@ build:
         mkdir ${PREVIOUS_HUGO_VERSION}
         tar xzf hugo_${PREVIOUS_HUGO_VERSION}_Linux-64bit.tar.gz --directory ${PREVIOUS_HUGO_VERSION}
         mv ${PREVIOUS_HUGO_VERSION}/hugo bin/hugo_${PREVIOUS_HUGO_VERSION}
-  - script:
-      name: Move the important stuff to output
-      code: |
-        mv README.md run.sh step.yml wercker.yml bin/ helpers/ $WERCKER_OUTPUT_DIR
-        ls -lh $WERCKER_OUTPUT_DIR
 
 deploy:
   steps:
