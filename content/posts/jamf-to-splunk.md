@@ -42,6 +42,8 @@ Jamf_API_call
 Jamf_DATA
 ```
 
+This script is creating the ```/var/log/jamf/jamf-monitor``` file which is being monitored by the SplunkForwarder.
+
 Eventually we're pushing the data to an index in our Splunkcloud environment. Due to the fact we're pushing JSON through our SplunkForwarder we needed to adjust the props.conf. The actual changes made are the following:
 
 ```
