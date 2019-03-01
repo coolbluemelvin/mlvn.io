@@ -1,0 +1,52 @@
+name: hugo-build
+version: 2.8.0
+summary: |
+    Downloads Hugo (http://gohugo.io) and runs it on the source code in order to generate the static site.
+tags:
+    - hugo
+    - static
+properties:
+    -   name: version
+        type: string
+        default: "0.53"
+        required: false
+    -   name: theme
+        type: string
+        default: ""
+        required: false
+    -   name: config
+        type: string
+        default: ""
+        required: false
+    -   name: flags
+        type: string
+        default: ""
+        required: false
+    -   name: basedir
+        type: string
+        default: ""
+        required: false
+    -   name: dev_flags
+        type: string
+        default: ""
+        required: false
+    -   name: dev_branches
+        type: string
+        default: ""
+        required: false
+    -   name: prod_branches
+        type: string
+        default: ""
+        required: false
+    -   name: force_install
+        type: string
+        default: false
+        required: false
+    -   name: install_pygments
+        type: string
+        default: false
+        required: false
+    -   name: clean_before
+        type: string
+        default: true
+        required: false
