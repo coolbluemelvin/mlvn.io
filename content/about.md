@@ -6,57 +6,7 @@ aliases = ["about-us","contact"]
   name = "Melvin Cornelissen"
 +++
 
-### Want to contact me in a secure way? Please use the following PGP key to email me at melvin@melvincornelissen.nl.
+#### Super secret dogo stuff to discuss?
+Please use the following PGP fingerprint to email me at melvin@melvincornelissen.nl.
 
-    -----BEGIN PGP PUBLIC KEY BLOCK-----
-
-    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
-    4zsPBByg+s/nC/5tbWAxUNVFsF7YKaII
-    =Syrp
-    -----END PGP PUBLIC KEY BLOCK-----
+    C1DA 959E F6FB D95F A1B0  661F D829 0103 81CC F326
