@@ -18,7 +18,7 @@ build:
         curl -L https://github.com/gohugoio/hugo/releases/download/v${PREVIOUS_HUGO_VERSION}/hugo_extended_${PREVIOUS_HUGO_VERSION}_Linux-64bit.tar.gz -o hugo_${PREVIOUS_HUGO_VERSION}_Linux-64bit.tar.gz
         mkdir ${PREVIOUS_HUGO_VERSION}
         tar xzf hugo_${PREVIOUS_HUGO_VERSION}_Linux-64bit.tar.gz --directory ${PREVIOUS_HUGO_VERSION}
-        mv ${PREVIOUS_HUGO_VERSION}/hugo bin/hugo_${PREVIOUS_HUGO_VERSION}./
+        mv ${PREVIOUS_HUGO_VERSION}/hugo bin/hugo_${PREVIOUS_HUGO_VERSION}
 
 deploy:
   steps:
