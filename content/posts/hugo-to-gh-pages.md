@@ -35,7 +35,7 @@ build:
 
   steps:
     - install-packages:
-        packages: git
+        packages: git curl
     - script:
         name: download hugo theme
         cwd: themes/
@@ -48,6 +48,8 @@ build:
 
 deploy:
   steps:
+    - install-packages:
+        packages: git curl
     - melvincornelissen/gh-pages:
         token: $GIT_TOKEN
         domain: mlvn.io
