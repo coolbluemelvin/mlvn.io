@@ -1,7 +1,6 @@
 +++
 title = "About"
 date = "2014-04-09"
-aliases = ["about-us","contact"]
 [ author ]
   name = "Melvin Cornelissen"
 +++
@@ -12,7 +11,7 @@ aliases = ["about-us","contact"]
 
 Developer at Coolblue and father of a beautiful daughter.  
 
-#### Super secret dogo stuff to discuss?
+#### Super secret dogo stuff to discuss
 Please use the following PGP fingerprint to email me at melvin@melvincornelissen.nl.
 
     5015 4D5B D846 C6A9 2EA5  501A 65D5 D54F 06F3 7775
