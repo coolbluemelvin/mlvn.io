@@ -12,19 +12,19 @@ tags:
 
 Recently I've started using Hugo to build my personal homepage and blog while serving it using Github Pages. First I started out by updating my Github Pages repository using a deploy script within the Hugo file repository. Of course that's not the way to go so instead I've been building a deployment pipeline using [Wercker](https://app.wercker.com/melvincornelissen/mlvn.io/installing/).
 
-# Prerequisites
+## Prerequisites
 
 -   Github Repository for the Hugo files
 -   Github Repository for the Github page (username.github.io)
 -   [Github personal access token](https://github.com/settings/tokens)
 -   [Wercker](https://app.wercker.com/) account
 
-## Optional
+### Optional
 
 -   Github Repository for the Wercker buildstep
 -   [Codacy](https://www.codacy.com/) account
 
-# Wercker build step
+## Wercker build step
 
 Within Wercker there are several build steps already created which you can use for deploying to Github Pages. I however decided to build my own in order to have more control over the script actually running the deployment. You'll need a Github Repository with the following files to build and deploy your own build steps.
 
@@ -36,7 +36,7 @@ The `run.sh` will contain the script performing the deployment to Github Pages, 
 
 In case you're interested, my build step can be found in this [Github Repository](https://github.com/coolbluemelvin/wercker-step-gh-pages)
 
-# Deployment
+## Deployment
 
 The wercker.yml file:
 ```yaml
