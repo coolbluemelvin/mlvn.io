@@ -4,9 +4,9 @@ date: 2019-02-28T19:53:04+01:00
 toc: false
 images:
 tags:
--   bash
--   scripts
--   jamf
+-   Bash
+-   Scripts
+-   Jamf
 ---
 
 This post is to test the PrismJS syntax highlighting.

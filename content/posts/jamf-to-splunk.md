@@ -7,7 +7,7 @@ tags:
 -   Splunk
 -   Jamf
 -   powershell
--   api
+-   API
 ---
 
 ### Jamf metrics to SplunkEnterprise
