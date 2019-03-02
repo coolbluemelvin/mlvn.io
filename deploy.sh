@@ -21,7 +21,7 @@ cd ../mlvn.io
 
 echo -e "\033[0;32mCommit and push the new build to mlvn.io...\033[0m"
 git add -A
-git commit -am "New Blog Build (`date`)"
+git commit -am "New Blog Build $(date)"
 git push
 
 echo -e "\033[0;32mDeploy complete.\033[0m"
