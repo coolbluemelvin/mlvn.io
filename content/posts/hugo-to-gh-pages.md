@@ -48,7 +48,7 @@ build:
 
 deploy:
   steps:
-    - uetchy/gh-pages:
+    - melvincornelissen/gh-pages:
         token: $GIT_TOKEN
         domain: mlvn.io
         repo: coolbluemelvin/coolbluemelvin.github.io
