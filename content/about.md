@@ -5,7 +5,7 @@ date = "2019-02-28"
 
 {{< figure src="/images/mlvn.jpg" alt="Hello Friend" position="center" style="border-radius: 50%; width: 150px;" >}}
 
-## Hi! I'm Melvin.
+## Hi! I'm Melvin
 
 Developer at Coolblue and father of a beautiful daughter.  
 
