@@ -6,7 +6,11 @@ aliases = ["about-us","contact"]
   name = "Melvin Cornelissen"
 +++
 
-{{< figure src="/images/mlvn.jpg" alt="Hello Friend" position="center" style="border-radius: 50%; width: 100px;" >}}
+{{< figure src="/images/mlvn.jpg" alt="Hello Friend" position="center" style="border-radius: 50%; width: 150px;" >}}
+
+## Hi! I'm Melvin.
+
+Developer at Coolblue and father of a beautiful daughter.  
 
 #### Super secret dogo stuff to discuss?
 Please use the following PGP fingerprint to email me at melvin@melvincornelissen.nl.
