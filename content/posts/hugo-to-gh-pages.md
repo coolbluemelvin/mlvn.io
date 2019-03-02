@@ -10,7 +10,7 @@ tags:
 -   Codacy
 ---
 
-# Hugo
+# From Hugo for Github Pages
 
 Recently I've started using Hugo to build my personal homepage and blog while serving it using Github Pages. First I started out by updating my Github Pages repository using a deploy script within the Hugo file repository. Of course that's not the way to go so instead I've been building a deployment pipeline using [Wercker](https://app.wercker.com/melvincornelissen/mlvn.io/installing/).
 
