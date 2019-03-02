@@ -79,7 +79,6 @@ disableHugoGeneratorInject = false
     title = "Hi! I'm Melvin"
     homeSubtitle = "DevOp @ Coolblue."
     keywords = ""
-    copyright = ""
     readOtherPosts = "Read other posts"
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
