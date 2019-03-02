@@ -22,6 +22,6 @@ deploy:
     - install-packages:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
-        token: $GIT_TOKEN_PRIVATE
+        token: $GIT_TOKEN
         repo: coolbluemelvin/coolbluemelvin.github.io
         basedir: public
