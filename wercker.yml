@@ -19,7 +19,9 @@ build:
 
 deploy:
   steps:
-    - uetchy/gh-pages:
+    - install-packages:
+        packages: git ssh-client
+    - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: mlvn.io
         repo: coolbluemelvin/coolbluemelvin.github.io
