@@ -21,6 +21,7 @@ Recently I've started using Hugo to build my personal homepage and blog while se
 
 ## Optional
 
+  - Github Repository for the Wercker buildstep
   - [Codacy](https://www.codacy.com/) account
 
 # Deployment
