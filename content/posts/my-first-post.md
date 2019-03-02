@@ -7,4 +7,4 @@ tags:
   - first-post
 ---
 
-Hello? 🦄🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷🐽
+Hello? 🦄🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷
