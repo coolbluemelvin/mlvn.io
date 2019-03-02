@@ -29,7 +29,7 @@ $data = get-content jamf.json | convertfrom-json
 $script:macOS_jamf = $data.computers.id
 }
 
-#grep General, Hardware, Location and extensionattributes data per computer and add to the log
+#grep General, Hardware, Location and extension_attributes data per computer and add to the log
 function Jamf_DATA {
 Foreach ($id in $macOS_jamf)
 {
