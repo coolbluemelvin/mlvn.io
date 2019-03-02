@@ -14,14 +14,14 @@ Recently I've started using Hugo to build my personal homepage and blog while se
 
 # Prerequisites
 
-- Github Repository for the Hugo files
-- Github Repository for the Github page (username.github.io)
-- [Github personal access token](https://github.com/settings/tokens)
-- [Wercker](https://app.wercker.com/) account
+  - Github Repository for the Hugo files
+  - Github Repository for the Github page (username.github.io)
+  - [Github personal access token](https://github.com/settings/tokens)
+  - [Wercker](https://app.wercker.com/) account
 
 ## Optional
 
-- [Codacy](https://www.codacy.com/) account
+  - [Codacy](https://www.codacy.com/) account
 
 # Deployment
 
