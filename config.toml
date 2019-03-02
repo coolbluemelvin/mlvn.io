@@ -76,7 +76,7 @@ disableHugoGeneratorInject = false
 [languages]
   [languages.en]
     title = "Hi! I'm Melvin"
-    homeSubtitle = "DevOP @ Coolblue."
+    homeSubtitle = "DevOp @ Coolblue."
     keywords = ""
     copyright = ""
     readOtherPosts = "Read other posts"
