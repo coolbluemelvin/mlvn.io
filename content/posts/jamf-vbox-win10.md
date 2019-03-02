@@ -4,9 +4,9 @@ date: 2019-03-01T13:57:04+01:00
 toc: false
 images:
 tags:
-- bash
-- scripts
-- jamf
+  - bash
+  - scripts
+  - jamf
 ---
 
 ### Auto install Win 10 VBox VM's through Jamf self service

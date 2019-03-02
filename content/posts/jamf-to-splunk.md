@@ -4,10 +4,10 @@ date: 2019-03-01T14:32:10+01:00
 toc: false
 images:
 tags:
-- Splunk
-- Jamf
-- powershell
-- api
+  - Splunk
+  - Jamf
+  - powershell
+  - api
 ---
 
 ### Jamf metrics to SplunkEnterprise
