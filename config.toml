@@ -22,7 +22,7 @@ buildExpored = false
 canonifyURLs = true
 
 enableRobotsTXT = true
-enableGitInfo   = false
+enableGitInfo   = true
 enableEmoji     = true
 enableMissingTranslationPlaceholders = false
 disableRSS     = false
@@ -46,6 +46,7 @@ disableHugoGeneratorInject = false
   description = "Homepage and blog by Melvin Cornelissen"
   keywords = "homepage, blog, science, informatics, development, programming"
   images = [""]
+  gitUrl = "https://github.com/coolbluemelvin/mlvn.io/commit/"
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
