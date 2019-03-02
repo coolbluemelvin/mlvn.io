@@ -70,14 +70,14 @@ deploy:
         path: public
 ```
 
-{{< figure src="/images/wercker.png" alt="wercker" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/wercker.png" alt="wercker" position="center" style="border-radius: 6px;" >}}
 
-{{< figure src="/images/wercker-build.png" alt="wercker-build" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/wercker-build.png" alt="wercker-build" position="center" style="border-radius: 6px;" >}}
 
-{{< figure src="/images/wercker-deploy.png" alt="wercker-deploy" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/wercker-deploy.png" alt="wercker-deploy" position="center" style="border-radius: 6px;" >}}
 
-{{< figure src="/images/codacy.png" alt="codacy" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/codacy.png" alt="codacy" position="center" style="border-radius: 6px;" >}}
 
-{{< figure src="/images/codacy-checks.png" alt="codacy-checks" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/codacy-checks.png" alt="codacy-checks" position="center" style="border-radius: 6px;" >}}
 
-{{< figure src="/images/codacy-overview.png" alt="codacy-overview" position="center" style="border-radius: 8px;" >}}
+{{< figure src="/images/codacy-overview.png" alt="codacy-overview" position="center" style="border-radius: 6px;" >}}
