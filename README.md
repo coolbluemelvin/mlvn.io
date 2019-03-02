@@ -4,5 +4,3 @@
 Personal homepage and blog.
 
 Made with Hugo
-
-![Website](https://img.shields.io/website-up-down-green-red/https/mlvn.io.svg?style=popout)
