@@ -28,7 +28,7 @@ Recently I've started using Hugo to build my personal homepage and blog while se
 
 ## Wercker build step
 
-Within Wercker there are several build steps already created which you can use for deploying to Github Pages. I however decided to build my own in order to have more control over the script actually running the deployment. You'll need a Github Repository with the following files to build and deploy your own build steps.
+Within Wercker there are several build steps already created which you can use for deploying to Github Pages. I however decided to build my own based on uetchy/gh-pages in order to have more control over the script actually running the deployment. You'll need a Github Repository with the following files to build and deploy your own build steps.
 
 -   run.sh
 -   step.yml
