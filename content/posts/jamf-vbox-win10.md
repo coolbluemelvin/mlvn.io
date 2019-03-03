@@ -9,4 +9,4 @@ tags:
 -   Jamf
 ---
 
-### Auto install Win 10 VBox VM's through Jamf self service
+## Auto install Win 10 VBox VM's through Jamf self service
