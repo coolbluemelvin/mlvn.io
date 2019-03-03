@@ -16,15 +16,12 @@ Recently I've started using Hugo to build my personal homepage and blog while se
 
 ## TL;DR
 
-1.  Create [Github](https://github.com) repositories (Hugo & Github Pages)
-
-2.  Install [Hugo](https://gohugo.io) in the Hugo repository
-
-3.  Add [Hugo](https://gohugo.io) repository to [Wercker](https://app.wercker.com)
-    -   Add the [gh-pages](https://app.wercker.com/steps/melvincornelissen/gh-pages) to the deploy pipeline
-    -   Add the [Github personal access token](https://github.com/settings/tokens) to the deploy pipeline
-
-4.  Trigger a build by pushing a commit into the Hugo repository
+1.  Create [Github](https://github.com) repositories (Hugo & Github Pages)  
+2.  Install [Hugo](https://gohugo.io) in the Hugo repository  
+3.  Add [Hugo](https://gohugo.io) repository to [Wercker](https://app.wercker.com)  
+    -   Add the [gh-pages](https://app.wercker.com/steps/melvincornelissen/gh-pages) to the deploy pipeline  
+    -   Add the [Github personal access token](https://github.com/settings/tokens) to the deploy pipeline  
+4.  Trigger a build by pushing a commit into the Hugo repository  
 
 ## Prerequisites
 
