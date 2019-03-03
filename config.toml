@@ -55,20 +55,12 @@ disableHugoGeneratorInject = false
 
   # Social icons
   [[params.social]]
-    name = "email"
-    url  = "mailto:melvin@melvincornelissen.nl"
-
-  [[params.social]]
     name = "github"
     url  = "https://github.com/coolbluemelvin"
 
   [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/melvincornelissen"
-
-  [[params.social]]
-    name = "keybase"
-    url  = "https://keybase.io/cornelissen"
 
   [[params.social]]
     name = "instagram"
