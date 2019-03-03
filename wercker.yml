@@ -13,7 +13,7 @@ build:
         code: git clone https://github.com/rhazdon/hugo-theme-hello-friend-ng.git hello-friend-ng
     - arjen/hugo-build:
         basedir: "/"
-        version: "0.54"
+        version: "0.53"
         theme: hello-friend-ng
         flags: --buildDrafts=true
 
