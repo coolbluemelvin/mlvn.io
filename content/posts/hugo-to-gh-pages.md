@@ -23,7 +23,6 @@ Recently I've started using Hugo to build my personal homepage and blog while se
     -   Add the [Github personal access token](https://github.com/settings/tokens) to the deploy pipeline.
 4.  Trigger a build by pushing a commit into the Hugo repository.
 
-
 ## Prerequisites
 
 -   Github Repository for the Hugo files
