@@ -5,4 +5,4 @@
 
 Personal homepage and blog.
 
-Made with Hugo
+Made with [Hugo](https://gohugo.io)
