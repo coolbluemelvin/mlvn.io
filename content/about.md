@@ -13,5 +13,3 @@ Developer at Coolblue and father of a beautiful daughter.
 Please use the following PGP fingerprint to email me at melvin@melvincornelissen.nl.
 
     5015 4D5B D846 C6A9 2EA5  501A 65D5 D54F 06F3 7775
-
-Hoi Dave
