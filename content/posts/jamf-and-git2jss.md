@@ -1,10 +1,12 @@
 ---
-title: "Jamf and Git2jss"
+title: "Jamf, Git2jss and Teamcity"
 date: 2019-03-06T21:05:47+01:00
 draft: true
 toc: false
 images:
 tags:
-  - untagged
+-   CI/CD
+-   Teamcity
+-   Git2jss
+-   Jamf 
 ---
-
