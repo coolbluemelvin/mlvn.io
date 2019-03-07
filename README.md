@@ -5,4 +5,6 @@
 
 Personal homepage and blog.
 
+<p align="center"><a href="https://mlvn.io/images/darklight.gif"/></a></p>
+
 Made with [Hugo](https://gohugo.io)
