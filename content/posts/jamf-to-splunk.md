@@ -68,7 +68,7 @@ sourcetype=jamf
 disabled = false
 ```
 
-Eventually we're pushing the data into an index in our Splunkcloud environment. Due to the fact we're pushing JSON through our SplunkForwarder we needed to create a new sourcetype and adjust adjust it for the JSON we're pushing to Splunk. The actual changes made are the following:
+Eventually we're pushing the data into an index in our Splunkcloud environment. Due to the fact we're pushing JSON through our SplunkForwarder we needed to create a new sourcetype and adjust it for the JSON we're pushing to Splunk. The actual changes made are the following:
 
 ```textile
 Indexed Extractions   none
