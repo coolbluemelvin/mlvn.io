@@ -29,7 +29,7 @@ postmulti -i postfix-delivery -e enable
 
 Next we need to configure the new instance's main and master configs. The main instance will run on port :25 and transports to the filters default ports. The filters will return the mail to the second instance on port :100025. This way we can transport mail based on two transport maps and have granularly control over which mail goes through which filter.
 
-The first transport map would look like following:
+The transport map of the (initial) postfix instance running on port :25 would look like following:
 
 ```
 firstmailaddress@domain.com         smtp:secondaryfilter.domain.com:25
@@ -37,7 +37,7 @@ secondmailaddress@otherdomain.com   smtp:secondaryfilter.domain.com:25
 *                                   smtp:primaryfilter.domain.com:10024
 ```
 
-This will route the mails to the specified filters whereas our primary filter is a Amavis cluster and the secondary filter a third party solution. As we are "Proof Of Concept"ing this we wanted to have control over the addresses that go through the third party solution. Both filters will return their mail to the second postfix instance on port 10025. This instance has the following transport map and recipient canonical map:
+This will route the mails to the specified filters whereas our primary filter is a Amavis cluster and the secondary filter a third party solution. As we are "Proof Of Concept"ing this we wanted to have control over the addresses that go through the third party solution. Both filters will return their mail to the second postfix instance listening on port :10025. This instance has the following transport map and recipient canonical map:
 
 Transport map:
 ```
