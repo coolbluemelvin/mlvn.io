@@ -27,4 +27,14 @@ postmulti -I postfix-deliver -e create
 postmulti -i postfix-delivery -e enable
 ```
 
+Next we need to configure the new instance's main and master configs. The main instance will run on port :25 and transports to the filters default ports. The filters will return the mail to the second instance on port :100025. This way we can transport mail based on two transport maps and have granularly control over which mail goes through which filter.
+
+The first transport map would look like following:
+
+```
+firstmailaddress@domain.com         smtp:secondaryfilter.domain.com:25
+secondmailaddress@otherdomain.com   smtp:secondaryfilter.domain.com:25
+*                                   smtp:primaryfilter.domain.com:10024
+```
+
 {{< figure src="/images/postfix-multi.png" alt="postfix-multi" position="center" style="border-radius: 6px;" >}}
