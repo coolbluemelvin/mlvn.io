@@ -14,7 +14,9 @@ Therefore we've chosen to run multiple instances to make decisions based on a 1s
 
 ## How?
 
-First we need to enable postfix multi instance. We're calling the second instance postfix-delivery as that's what the main goal of the instance would be. We keep the initial postfix instance to decide which content filter the mail gets routed to.
+### First we need to enable postfix multi instance.
+
+We're calling the second instance postfix-delivery as that's what the main goal of the instance would be. We keep the initial postfix instance to decide which content filter the mail gets routed to.
 
 ```bash
 ####Initiate MultiInstance
@@ -27,7 +29,9 @@ postmulti -I postfix-deliver -e create
 postmulti -i postfix-delivery -e enable
 ```
 
-Next we need to configure the new instance's main and master configs. The main instance will run on port :25 and transports to the filters default ports. The filters will return the mail to the second instance on port :100025. This way we can transport mail based on two transport maps and have granularly control over which mail goes through which filter.
+### Next we need to configure the new instance's main and master configs.
+
+The main instance will run on port :25 and transports to the filters default ports. The filters will return the mail to the second instance on port :100025. This way we can transport mail based on two transport maps and have granularly control over which mail goes through which filter.
 
 The transport map of the (initial) postfix instance running on port :25 would look like following:
 
