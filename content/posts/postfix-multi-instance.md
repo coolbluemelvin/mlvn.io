@@ -37,7 +37,7 @@ The main instance will run on port :25 and transports to the filters default por
 
 The transport map of the (initial) postfix instance running on port :25 would look like following:
 
-```
+```textile
 firstmailaddress@domain.com         smtp:secondaryfilter.domain.com:25
 secondmailaddress@otherdomain.com   smtp:secondaryfilter.domain.com:25
 *                                   smtp:primaryfilter.domain.com:10024
@@ -46,12 +46,12 @@ secondmailaddress@otherdomain.com   smtp:secondaryfilter.domain.com:25
 This will route the mails to the specified filters whereas our primary filter is a Amavis cluster and the secondary filter a third party solution. As we are "Proof Of Concept"ing this we wanted to have control over the addresses that go through the third party solution. Both filters will return their mail to the second postfix instance listening on port :10025. This instance has the following transport and recipient canonical map:
 
 Transport map:
-```
+```textile
 *                                   smtp:[aspmx.l.google.com]
 ```
 
 Recipient canonical map:
-```
+```textile
 firstmailaddress@domain.com         alias123@application.com
 secondmailaddress@otherdomain.com   alias321@application.com
 ```
