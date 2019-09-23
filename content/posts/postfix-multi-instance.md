@@ -16,14 +16,14 @@ Therefore we've chosen to run multiple instances to make decisions based on a 1s
 
 ### First we need to enable postfix multi instance.
 
-We're calling the second instance postfix-delivery as that's what the main goal of the instance would be. We keep the initial postfix instance to decide which content filter the mail gets routed to.
+We're calling the second instance postfix-delivery as that's what the main goal of the instance will be. We keep the initial postfix instance to decide which content filter the mail gets routed to.
 
 ```bash
 ####Initiate MultiInstance
 postmulti -e init
 
 ####Create Secondary Instance postfix-delivery
-postmulti -I postfix-deliver -e create
+postmulti -I postfix-delivery -e create
 
 ####Enable Secondary Instance
 postmulti -i postfix-delivery -e enable
