@@ -4,7 +4,7 @@ date: 2019-09-19T15:19:46+02:00
 draft: true
 ---
 
-# Decisions decisions Dave has to make
+# Decisions decisions 
 
 ## Why are we doing this
 
