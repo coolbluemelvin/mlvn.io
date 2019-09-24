@@ -4,17 +4,17 @@ date: 2019-09-19T15:19:46+02:00
 draft: true
 ---
 
-#Decisions decisions
+# Decisions decisions
 
-##Why are we doing this
+## Why are we doing this
 
 I was challenged with finding a solution to split up our incoming mailflow and push it through separate content filters. As we're trying to split mails within the same domain we were unable to make this decision within a single postfix instance as it would only read a single transport map.
 
 Therefore we've chosen to run multiple instances to make decisions based on a 1st and 2nd transport map. The reason we need two transport maps is because besides the content filter split we also use different applications as endpoints for certain mail addresses.
 
-##How are we going to do this
+## How are we going to do this
 
-###First
+### First
 ...we need to enable postfix multi instance.
 
 We're calling the second instance postfix-delivery as that's what the main goal of the instance will be. We keep the initial postfix instance to decide which content filter the mail gets routed to.
@@ -30,7 +30,7 @@ postmulti -I postfix-delivery -e create
 postmulti -i postfix-delivery -e enable
 ```
 
-###Next
+### Next
 ...we need to configure the new instance's main and master configs.
 
 The main instance will run on port :25 and transports to the filters default ports. The filters will return the mail to the second instance on port :100025. This way we can transport mail based on two transport maps and have granularly control over which mail goes through which filter.
