@@ -48,7 +48,7 @@ This will route the mails to the specified filters whereas our primary filter is
 Transport map:
 ```textile
 *                                   smtp:[aspmx.l.google.com]
-thirdmail@domain.com                smtp:[1.2.3.4]
+thirdmailaddress@domain.com                smtp:[1.2.3.4]
 ```
 
 Recipient canonical map:
