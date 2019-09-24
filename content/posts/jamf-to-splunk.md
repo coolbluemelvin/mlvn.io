@@ -12,7 +12,7 @@ tags:
 
 ### Jamf metrics to SplunkEnterprise
 
-Since we like to have insights in our enrollments we were looking for a solution that could update data as close to realtime as possible. We ended up using Splunk and a intermediate script server. The script server is performing the API call and providing data to the file that's being monitored by a SplunkForwarder.
+Since we like to have insights in our enrollments we were looking for a solution that could update data as close to realtime as possible. We ended up using Splunk and a intermediate script server. The script server is performing the API call and providing data to the file that's being monitored by the SplunkForwarder.
 
 The script that's performing the API call is the following.
 
