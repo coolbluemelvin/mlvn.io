@@ -1,5 +1,5 @@
 ---
-title: "Macos Default App Change"
+title: "macOS Change default application for UTI"
 date: 2019-09-25T10:59:08+02:00
 draft: true
 ---
