@@ -1,13 +1,13 @@
 ---
-title: "AutoPKG     "
-date: 2019-03-01T13:57:04+01:00
+title: "AutoPKG"
+date: 2020-03-27T08:27:09+01:00
 toc: false
 images:
 tags:
 -   AutoPKG
+-   Jamf
 -   Application
 -   Management
--   Jamf
 ---
 
-# AutoPKG applications for Jamf
+### AutoPKG applications for Jamf
