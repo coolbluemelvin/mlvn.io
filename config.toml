@@ -66,6 +66,10 @@ disableHugoGeneratorInject = false
     name = "instagram"
     url  = "https://www.instagram.com/melvincornelissen/"
 
+  [[params.social]]
+    name = "keybase"
+    url  = "https://keybase.io/cornelissen"
+
 [languages]
   [languages.en]
     title = "Hi! I'm Melvin"
