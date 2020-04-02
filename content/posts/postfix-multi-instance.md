@@ -57,4 +57,4 @@ firstmailaddress@domain.com         alias123@application.com
 secondmailaddress@otherdomain.com   alias321@application.com
 ```
 
-{{< figure src="/images/postfix-multi.png" alt="postfix-multi" position="center" style="border-radius: 6px;" >}}
+{{< image src="/images/postfix-multi.png" alt="postfix-multi" position="center" style="border-radius: 6px;" >}}

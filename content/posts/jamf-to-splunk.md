@@ -303,4 +303,4 @@ KV_MODE               json
 
 This results in the following dashboard 🧐.
 
-{{< figure src="/images/jamf-to-splunk.png" alt="Jamf <3 Splunk" position="center" style="border-radius: 8px;" >}}
+{{< image src="/images/jamf-to-splunk.png" alt="Jamf <3 Splunk" position="center" style="border-radius: 8px;" >}}
