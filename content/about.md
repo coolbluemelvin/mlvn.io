@@ -3,7 +3,7 @@ title = "About"
 date = "2019-02-28"
 +++
 
-{{< figure src="/images/mlvn.jpg" alt="Hello Friend" position="center" style="border-radius: 50%; width: 150px;" >}}
+{{< image src="/images/mlvn.jpg" alt="Hello Friend" position="center" style="border-radius: 50%; width: 150px;" >}}
 
 ## Hi! I'm Melvin
 
