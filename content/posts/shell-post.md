@@ -12,98 +12,108 @@ tags:
 This post is to test the PrismJS syntax highlighting.
 
 ```bash
-#!/bin/bash
-
-#####################
-##### Variables #####
-#####################
-# $LDAP_HOST = ldap host (jamf parameter 4)
-# $LDAP_PASSWORD = ldap password (jamf parameter 5)
-# $LDAP_USER = ldap user (jamf parameter 6)
-# $OU (jamf parameter 7)
-# $API_USER (jamf parameter 8)
-# $API_PASSWORD (jamf parameter 9)
+#!/usr/bin/env bash
 
 ############################
 ##### Script Variables #####
 ############################
-# $EXISTING_RECORDS = an LDAP query to get all existing records.
-# $DEVELOPERS = an API query to check if the current user ($3), is a developer. (checks if a user is member of DLG-APP-JAMF-Clients-Developers).
-# $UUID = A 4 digit random generated alphanumeric string.
-# $PREFIX = the Hostname prefix we put before the random generated alphanumeric string.
-# $NEW_HOSTNAME = putting the prefix and Unique alphanumeric string together resulting the new unique hostname.
-# $BAD_WORDS_LIST = dowloads a list with unauthorized words from the Office Automation repository (Github RAW).
+# $API_USER (jamf parameter 4)
+# $API_PASSWORD (jamf parameter 5)
 
-# bash generate random 4 character alphanumeric string (upper and lowercase) and set variable
-UUID=$(cat /dev/random | LC_CTYPE=C tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
-
-# populate ldap specific variables and credentials
-LDAP_HOST=$4 # $LDAP_HOST = ldap host (jamf parameter 4)
-LDAP_PASSWORD=$5 # $LDAP_PASSWORD = ldap password (jamf parameter 5)
-LDAP_USER=$6 # $LDAP_USER = ldap user (jamf parameter 6)
-OU=$7 # $OU (jamf parameter 7)
+CURRENTHOSTNAME=$(/usr/sbin/scutil --get ComputerName)
+CURRENTCOMPUTERNAME=$(/usr/sbin/scutil --get LocalHostName)
+CURRENTLOCALHOSTNAME=$(/usr/sbin/scutil --get HostName)
 API_URL=$(defaults read /Library/Preferences/com.jamfsoftware.jamf.plist jss_url)
-API_USER=$8 #(jamf parameter 10)
-API_PASSWORD=$9 #(jamf parameter 11)
-EXISTING_RECORDS=$(ldapsearch -h "$LDAP_HOST" -p 389 -x -D "$LDAP_USER" -w "$LDAP_PASSWORD" -b "$OU" | grep name: | sed 's/name: //')
-DEVELOPERS=$(curl -s -u $API_USER:$API_PASSWORD -H "Accept: application/json" -X GET "$API_URL"JSSResource/ldapservers/name/$LDAP_HOST/group/DLG-APP-JAMF-Clients-Developers/user/$3 | sed -e 's/^.*"is_member":"\([^"]*\)".*$/\1/')
-BAD_WORDS_LIST=$(curl -H 'Authorization: token $git_token' -H 'Accept: application/vnd.github.v4.raw' -L https://api.github.com/repos/coolblue-development/office-automation/contents/macOS/bad_words)
+API_USER=$4
+API_PASSWORD=$5
+SLACKTOKEN=$6
 SERIALNUMBER=$(system_profiler SPHardwareDataType | grep 'Serial Number (system)' | awk '{print $NF}')
 
-#####################
-##### Functions #####
-#####################
+# Get Mac data from jamf (using serialnumber, requesting ONLY the extensionattributes subset)
+curl -s -u $API_USER:$API_PASSWORD "$API_URL"JSSResource/computers/serialnumber/$SERIALNUMBER/subset/General\&extension_attributes -X GET -H "Accept: application/xml" > /tmp/remediation-hostname.xml
 
-### generate new hostname based on prefix and randomized UUID
-generate_hostname() {
-    if [[ $DEVELOPERS == "Yes" ]]; then
-        PREFIX=nldm-
-    else
-        PREFIX=nllm-
-    fi
+# Extract the initial hostname from Jamf data (this is the hostname our mac should already have)
+JAMFHOSTNAME=$(xmllint --xpath '/computer/extension_attributes/extension_attribute[name="coolblue-initial-hostname"]/value/text()' /tmp/remediation-hostname.xml)
 
-    NEW_HOSTNAME=$PREFIX$UUID
+slackmessage_remediation() {
+  curl --silent --location --request POST 'https://slack.com/api/chat.postMessage' \
+  --header 'Authorization: Bearer '$SLACKTOKEN'' \
+  --form 'channel=#ohhahh-notifications-private' \
+  --form 'title=Jamf Script [Remediation - Rename machine]' \
+  --form 'blocks=[
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "[INFO] A device has been renamed by the remediation script:"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "• JamfHostname:'$JAMFHOSTNAME' \n\n • Hostname:'$CURRENTHOSTNAME' \n • LocalHostname:'$CURRENTLOCALHOSTNAME' \n • ComputerName:'$CURRENTCOMPUTERNAME'"
+        }
+      }
+  ]'
+}
 
+slackmessage_ok() {
+  curl --silent --location --request POST 'https://slack.com/api/chat.postMessage' \
+  --header 'Authorization: Bearer '$SLACKTOKEN'' \
+  --form 'channel=#ohhahh-notifications-private' \
+  --form 'title=Jamf Script [Remediation - Rename machine]' \
+  --form 'blocks=[
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "[SUCCESS] :success-kid: '$(hostname)' is compliant, nothing to do:"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "Initial hostname is '$JAMFHOSTNAME'."
+        }
+      }
+  ]'
+}
+
+renamemachine() {
 while true
 do
-    if [[ $EXISTING_RECORDS =~ $NEW_HOSTNAME || $BAD_WORDS_LIST =~ $UUID ]]; then
-        sleep 1
+  MDM_SERIAL=$(xmllint --xpath '/computer/general/serial_number/text()' /tmp/remediation-hostname.xml)
+    if [[ ! $MDM_SERIAL == "$SERIALNUMBER" ]]; then
+      echo "[ERROR] Data incorrect"
+      echo "[ERROR] The MDM serial number ($MDM_SERIAL) does not correspond with the local serial number ($SERIALNUMBER)"
+      curl -s -u $API_USER:$API_PASSWORD "$API_URL"JSSResource/computers/serialnumber/$SERIALNUMBER/subset/General\&extension_attributes -X GET -H "Accept: application/xml" > /tmp/remediation-hostname.xml
+      sleep 10
     else
-        /usr/sbin/scutil --set ComputerName "$NEW_HOSTNAME"
-        /usr/sbin/scutil --set LocalHostName "$NEW_HOSTNAME"
-        /usr/sbin/scutil --set HostName "$NEW_HOSTNAME"
-        break
+      # Test if LocalHostName is the same as the wanted hostname.
+      if [[ ! "$CURRENTHOSTNAME" == "$JAMFHOSTNAME" ]] || [[ ! "$CURRENTLOCALHOSTNAME" == "$JAMFHOSTNAME" ]] || [[ ! "$CURRENTCOMPUTERNAME" == "$JAMFHOSTNAME" ]]; then
+        echo "Mac is renamed! remediation starting..."
+        /usr/sbin/scutil --set ComputerName "$JAMFHOSTNAME"
+        /usr/sbin/scutil --set LocalHostName "$JAMFHOSTNAME"
+        /usr/sbin/scutil --set HostName "$JAMFHOSTNAME"
+        echo "Mac was renamed from Hostname:$CURRENTHOSTNAME, LocalHostname:$CURRENTLOCALHOSTNAME, ComputerName:$CURRENTCOMPUTERNAME back to $JAMFHOSTNAME"
+        slackmessage_remediation
+        #curl -X POST --data-urlencode 'payload={"channel": "#ohhahh-notifications-private", "text": "[SUCCESS] Device was renamed from Hostname:'$CURRENTHOSTNAME', LocalHostname:'$CURRENTLOCALHOSTNAME', ComputerName:'$CURRENTCOMPUTERNAME' back to '$JAMFHOSTNAME'"}' https://hooks.slack.com/services/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
+      else
+    		echo "Mac name [$(hostname)] is compliant, nothing to do.."
+     		echo "Initial hostname is [$JAMFHOSTNAME]."
+            slackmessage_ok
+      fi
+    break
     fi
 done
-}
-# Set the hostname in EA
-
-coolblue-initial-hostname() {
-  # Create a XML payload for the Jamf API.
-cat << EOF > /private/tmp/coolblue-initial-hostname.xml
-<computer>
-<extension_attributes>
-    <extension_attribute>
-        <name>coolblue-initial-hostname</name>
-        <value>$NEW_HOSTNAME</value>
-    </extension_attribute>
-</extension_attributes>
-</computer>
-EOF
-
-# Send payload to Jamf API.
-curl -s -u $API_USER:$API_PASSWORD "$API_URL"JSSResource/computers/serialnumber/$SERIALNUMBER/subset/extensionattributes -T "/private/tmp/coolblue-initial-hostname.xml" -X PUT
-# Remove Payload from machine.
-rm -f /private/tmp/coolblue-initial-hostname.xml
-# Done!
+# Removing evidence ;)
+rm -f /tmp/remediation-hostname.xml
 }
 
+renamemachine
 
-##################
-##### Script #####
-##################
-
-generate_hostname
-coolblue-initial-hostname
+exit 0
 
 ```
