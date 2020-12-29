@@ -12,4 +12,4 @@ Developer at Coolblue and father of a beautiful daughter.
 ### Super secret dogo stuff to discuss 🐶
 Please download the public key to email me at melvin@mlvn.io.
 
-    https://code.mlvn.io/-/snippets/3
+    [mlvn.asc](https://code.mlvn.io/-/snippets/3/raw/master/mlvn.asc)
