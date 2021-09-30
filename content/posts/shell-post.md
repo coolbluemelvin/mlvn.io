@@ -2,6 +2,7 @@
 title: "Rename machine script"
 date: 2019-02-28T19:53:04+01:00
 toc: false
+draft: true
 images:
 tags:
 -   Bash

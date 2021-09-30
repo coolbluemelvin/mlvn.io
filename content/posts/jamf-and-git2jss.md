@@ -8,5 +8,5 @@ tags:
 -   CI/CD
 -   Teamcity
 -   Git2jss
--   Jamf 
+-   Jamf
 ---
